@@ -1,6 +1,6 @@
 # Portfolio
 
-Portafolio personal desarrollado con Next.js 16, React 19, TypeScript y Tailwind CSS.
+Portafolio personal desarrollado con Next.js 16, React 19, TypeScript y Tailwind CSS. 
 
 ## Requisitos previos
 
