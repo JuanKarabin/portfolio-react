@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null)
@@ -23,39 +23,49 @@ const projects = [
   {
     title: "Novten",
     category: "Finances",
-    description: "Landing page responsive y moderna para Novten, diseñada siguiendo la identidad visual corporativa.",
-    tags: ["HTML", "CSS", "JavaScript"],
+    description: "Responsive and modern landing page for Novten, designed following the corporate visual identity.",
     color: "from-[#3142dd] to-[#787365]",
+    image: "/images/novten.png",
     url: "https://novten.netlify.app",
-    repoUrl: "https://github.com/JuanKarabin/novten",
   },
   {
     title: "Olivia Pizzas & Empanadas",
     category: "Food",
-    description: "A complete web presence for a local restaurant featuring online ordering, menu management, and a modern responsive design.",
-    tags: ["React", "Node.js", "Responsive"],
+    description: "Complete web presence for a local restaurant featuring online ordering, menu management, and a modern responsive design.",
     color: "from-[#f97316] to-[#ef4444]",
+    image: "/images/olivia.png",
   },
   {
-    title: "Freelo Finanzas",
-    category: "Finances",
-    description: "Financial management platform with tools for budgeting, expense tracking, and financial analytics dashboards.",
-    tags: ["Next.js", "TypeScript", "APIs"],
-    color: "from-[#10b981] to-[#06b6d4]",
+    title: "El Positivo",
+    category: "Automotive",
+    description: "Auto parts and spare parts store specialized in suspension and steering. Modern website with product catalog and quote form.",
+    color: "from-[#dc2626] to-[#7f1d1d]",
+    image: "/images/positivo.png",
+    url: "https://elpositivosuspension.com.ar",
+  },
+  {
+    title: "Rollos Baires",
+    category: "Supply",
+    description: "Direct supplier of thermal rolls, labels and tapes. Great prices, all sizes, personalized service for businesses.",
+    color: "from-[#0d9488] to-[#0f766e]",
+    image: "/images/rollos.png",
+    url: "https://rollosbaires.com.ar",
+  },
+  {
+    title: "AETIA",
+    category: "Real Estate",
+    description: "Real estate agency specialized in smart investments. Transform your assets with financial and real estate solutions.",
+    color: "from-[#1e3a8a] to-[#3b82f6]",
+    image: "/images/aetia.png",
+    url: "https://grupoaetia.com",
   },
   {
     title: "Officeasy",
     category: "Construction",
-    description: "Web application for construction project management, including task scheduling, team coordination and progress tracking.",
-    tags: ["React", "Node.js", "Database"],
+    description: "Website offering 100% personalized and varied modular solutions. Foldable offices, stackable units, and expandable homes.",
     color: "from-primary to-[#818cf8]",
-  },
-  {
-    title: "Kalli Digital",
-    category: "Marketing",
-    description: "Digital marketing agency website with modern design, service showcases, case studies, and integrated contact forms.",
-    tags: ["Web Design", "SEO", "CMS"],
-    color: "from-[#ec4899] to-[#8b5cf6]",
+    image: "/images/officeasy.png",
+    url: "https://officeasy.com.ar",
   },
 ]
 
@@ -81,7 +91,7 @@ export function PortfolioSection() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, i) => {
-            const projectWithLinks = project as typeof project & { url?: string; repoUrl?: string }
+            const projectWithLinks = project as typeof project & { url?: string; repoUrl?: string; image?: string }
             return (
               <div
                 key={project.title}
@@ -90,37 +100,38 @@ export function PortfolioSection() {
                 }`}
                 style={{ animationDelay: `${200 + i * 150}ms`, animationFillMode: "backwards" }}
               >
-                {/* Gradient header */}
-                <div className={`h-48 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+                {/* Gradient header / Image background */}
+                <div
+                  className={`h-48 relative overflow-hidden ${!projectWithLinks.image ? `bg-gradient-to-br ${project.color}` : ""}`}
+                >
+                  {projectWithLinks.image && (
+                    <div
+                      className="absolute inset-0 blur-[2px] group-hover:blur-none transition-[filter] duration-300"
+                      style={{
+                        backgroundImage: `url(${projectWithLinks.image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    />
+                  )}
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.15),transparent)]" />
                   <div className="absolute bottom-4 left-6 right-6 flex items-end justify-between">
                     <span className="text-xs font-mono uppercase tracking-wider text-white/80 bg-black/20 px-3 py-1 rounded-full backdrop-blur-sm">
                       {project.category}
                     </span>
                     <div className="flex items-center gap-2">
-                      {projectWithLinks.repoUrl && (
-                        <a
-                          href={projectWithLinks.repoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors cursor-pointer"
-                          aria-label="Ver repositorio"
-                        >
-                          <Github size={16} className="text-white" />
-                        </a>
-                      )}
                       {projectWithLinks.url && (
                         <a
                           href={projectWithLinks.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors cursor-pointer"
-                          aria-label="Ver sitio web"
+                          aria-label="View website"
                         >
                           <ExternalLink size={16} className="text-white" />
                         </a>
                       )}
-                      {!projectWithLinks.url && !projectWithLinks.repoUrl && (
+                      {!projectWithLinks.url && (
                         <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-colors cursor-pointer">
                           <ExternalLink size={16} className="text-white" />
                         </div>
@@ -134,19 +145,9 @@ export function PortfolioSection() {
                   <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-mono px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
             )
