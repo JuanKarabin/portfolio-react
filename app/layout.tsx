@@ -17,21 +17,8 @@ export const metadata: Metadata = {
   title: 'Juan Karabin | Fullstack Developer',
   description: 'Fullstack Developer with 4+ years of experience building web and mobile applications. Based in Buenos Aires, Argentina.',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/images/jk.svg',
+    apple: '/images/jk.svg',
   },
 }
 
