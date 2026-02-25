@@ -59,7 +59,7 @@ const experiences = [
   },
   {
     period: "2021 - Present",
-    role: "Fullstack Web Developer SSR",
+    role: "Fullstack Web Developer",
     company: "TDI - Neuquen Tax System",
     logo: "/images/LOGO_NUEVO_SOLO.svg",
     description:
@@ -110,7 +110,7 @@ export function ExperienceSection() {
                   </div>
 
                   {/* Left side */}
-                  <div className={`md:w-1/2 ${isLeft ? "md:pr-16 md:text-right" : "md:pr-16 md:text-right md:order-first"}`}>
+                  <div className={`md:w-1/2 pl-12 md:pl-0 ${isLeft ? "md:pr-16 md:text-right" : "md:pr-16 md:text-right md:order-first"}`}>
                     {isLeft ? (
                       <TimelineCard exp={exp} />
                     ) : (

@@ -100,20 +100,20 @@ export function HeroSection() {
             </span>
           </div>
 
-          <div className="animate-fade-in-up delay-500 flex items-center gap-4 justify-center lg:justify-start" style={{ animationFillMode: "backwards" }}>
+          <div className="animate-fade-in-up delay-500 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 justify-center lg:justify-start" style={{ animationFillMode: "backwards" }}>
             <a
               href="#contact"
-              className="px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-[#818cf8] text-primary-foreground text-sm font-medium hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-[#818cf8] text-primary-foreground text-sm font-medium hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5 text-center"
             >
               {"Get in Touch"}
             </a>
             <a
               href="#portfolio"
-              className="px-6 py-3 rounded-lg glass glass-hover text-foreground text-sm font-medium transition-all duration-300 hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-6 py-3 rounded-lg glass glass-hover text-foreground text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 text-center"
             >
               {"View Work"}
             </a>
-            <div className="flex items-center gap-3 ml-2">
+            <div className="flex items-center justify-center sm:justify-start gap-3 sm:ml-2 w-full sm:w-auto">
               <a
                 href="https://github.com/JuanKarabin/"
                 target="_blank"
@@ -137,10 +137,10 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - hidden on mobile */}
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
+        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
         aria-label="Scroll down"
       >
         <ArrowDown size={20} />
