@@ -8,7 +8,7 @@ export function HeroSection() {
   const [imageFlipped, setImageFlipped] = useState(false)
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-24 md:pt-0">
       {/* Gradient orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[128px] animate-float" />
       <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-accent/15 rounded-full blur-[128px] animate-float delay-300" />
