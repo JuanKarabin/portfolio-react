@@ -44,6 +44,8 @@ const categories = [
       { name: "Python", level: 70 },
       { name: "REST APIs", level: 95 },
       { name: "GraphQL", level: 75 },
+      { name: "PHP", level: 80 },
+      { name: "Oracle Forms", level: 80 },
     ],
     color: "from-accent to-[#22d3ee]",
     bgColor: "accent",
@@ -53,6 +55,7 @@ const categories = [
     techs: [
       { name: "PostgreSQL", level: 85 },
       { name: "MySQL", level: 90 },
+      { name: "SQL", level: 90 },
       { name: "MongoDB", level: 80 },
       { name: "Redis", level: 70 },
       { name: "Docker", level: 70 },
@@ -133,7 +136,6 @@ function TechBar({
     <div>
       <div className="flex items-center justify-between mb-1.5">
         <span className="text-sm text-foreground">{name}</span>
-        <span className="text-xs font-mono text-muted-foreground">{level}%</span>
       </div>
       <div className="h-1.5 rounded-full bg-[rgba(255,255,255,0.06)] overflow-hidden">
         <div

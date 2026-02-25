@@ -28,43 +28,43 @@ const experiences = [
     logo: "/images/meli-logo.png",
     description:
       "Analyzed and managed user risk operations at the leading e-commerce platform in Latin America, ensuring secure transactions and identifying fraud patterns.",
-    tags: ["Risk Analysis", "E-commerce", "Security"],
+    tags: ["Risk Analysis", "SSR", "Customer Experience"],
   },
   {
     period: "2021 - Present",
-    role: "Fullstack Web Developer",
+    role: "Fullstack Web Developer SSR",
     company: "Tecnologia y Desarrollo Informatico (TDI)",
     logo: "/images/LOGO_NUEVO_SOLO.svg",
     description:
       "Team lead for a group of developers dedicated to the technology migration for the tax management system of the province of Rio Negro.",
-    tags: ["Team Lead", "Tax Systems", "Migration"],
+    tags: ["Team Lead", "Tax Systems", "Migration", "Oracle Forms", "PHP", "SQL"],
   },
   {
     period: "2021 - Present",
-    role: "Fullstack Web Developer",
+    role: "Fullstack Web Developer SSR",
     company: "TDI - Columbia University Project",
     logo: "/images/LOGO_NUEVO_SOLO.svg",
     description:
       "Participated in the development of an application to facilitate credit transfer between high school courses and Columbia University in the United States.",
-    tags: ["Education", "Credit Transfer", "Web App"],
+    tags: ["Angular", "Ionic","Education", "MySQL"],
   },
   {
     period: "2021 - Present",
-    role: "Fullstack Web Developer",
+    role: "Fullstack Web Developer SSR",
     company: "TDI - My Fitness App",
     logo: "/images/LOGO_NUEVO_SOLO.svg",
     description:
       "Participated in the development of web and mobile applications for My Fitness App, which provides a comprehensive training experience for athletes.",
-    tags: ["Mobile", "Fitness", "Full-stack"],
+    tags: ["Angular", "Ionic", "Fitness", "MySQL"],
   },
   {
     period: "2021 - Present",
-    role: "Fullstack Web Developer",
+    role: "Fullstack Web Developer SSR",
     company: "TDI - Neuquen Tax System",
     logo: "/images/LOGO_NUEVO_SOLO.svg",
     description:
       "Support and maintenance provided for the Tax Administration system of the province of Neuquen, ensuring stability and performance.",
-    tags: ["Maintenance", "Government", "Support"],
+    tags: ["PHP", "SQL", "Government", "Support"],
   },
 ]
 

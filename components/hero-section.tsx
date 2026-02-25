@@ -1,11 +1,12 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { ArrowDown, MapPin, Mail, Github, Linkedin } from "lucide-react"
 
 export function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [imageFlipped, setImageFlipped] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -83,17 +84,57 @@ export function HeroSection() {
       <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-accent/15 rounded-full blur-[128px] animate-float delay-300" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-        {/* Image */}
-        <div className="relative group">
+        {/* Image - flip on hover */}
+        <div
+          className="relative group w-48 h-48 lg:w-64 lg:h-64"
+          style={{ perspective: "1000px" }}
+          onMouseEnter={() => setImageFlipped(true)}
+          onMouseLeave={() => setImageFlipped(false)}
+        >
           <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity duration-500 animate-gradient" />
-          <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-[rgba(255,255,255,0.1)]">
-            <Image
-              src="/images/me.jpeg"
-              alt="Juan Karabin"
-              fill
-              className="object-cover"
-              priority
-            />
+          <div
+            className="relative w-full h-full rounded-full overflow-hidden border-2 border-[rgba(255,255,255,0.1)] transition-transform duration-500 ease-in-out"
+            style={{
+              transformStyle: "preserve-3d",
+              transform: imageFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+            }}
+          >
+            {/* Front - photo (fades out immediately on hover so we never see it rotated) */}
+            <div
+              className="absolute inset-0 rounded-full overflow-hidden transition-opacity duration-200"
+              style={{
+                opacity: imageFlipped ? 0 : 1,
+                transform: "rotateY(0deg)",
+                transitionProperty: "opacity",
+                transitionDelay: "0ms",
+              }}
+            >
+              <Image
+                src="/images/me.jpeg"
+                alt="Juan Karabin"
+                fill
+                className="object-cover rounded-full"
+                priority
+              />
+            </div>
+            {/* Back - Argentina flag (appears when flip completes) */}
+            <div
+              className="absolute inset-0 rounded-full overflow-hidden transition-opacity duration-200"
+              style={{
+                opacity: imageFlipped ? 1 : 0,
+                transform: "rotateY(180deg)",
+                pointerEvents: imageFlipped ? "auto" : "none",
+                transitionProperty: "opacity",
+                transitionDelay: imageFlipped ? "180ms" : "0ms",
+              }}
+            >
+              <Image
+                src="/images/arg.jpg"
+                alt="Argentina"
+                fill
+                className="object-cover rounded-full"
+              />
+            </div>
           </div>
         </div>
 

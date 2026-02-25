@@ -26,7 +26,7 @@ const projects = [
     description: "Responsive and modern landing page for Novten, designed following the corporate visual identity.",
     color: "from-[#3142dd] to-[#787365]",
     image: "/images/novten.png",
-    url: "https://novten.netlify.app",
+    url: "https://novten.company",
   },
   {
     title: "Olivia Pizzas & Empanadas",
@@ -34,6 +34,7 @@ const projects = [
     description: "Complete web presence for a local restaurant featuring online ordering, menu management, and a modern responsive design.",
     color: "from-[#f97316] to-[#ef4444]",
     image: "/images/olivia.png",
+    url: "https://oliviapizzas.com.ar",
   },
   {
     title: "El Positivo",
