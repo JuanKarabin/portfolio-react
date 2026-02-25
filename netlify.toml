@@ -1,0 +1,5 @@
+# Netlify auto-detecta Next.js. Esta config es opcional.
+# Para deploy: conecta el repo en Netlify Dashboard y deploya.
+
+[build]
+  command = "npm run build"

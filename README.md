@@ -57,6 +57,17 @@ npm run start
 | `npm run start` | Ejecuta la versión compilada |
 | `npm run lint` | Ejecuta el linter ESLint |
 
+## Deploy en Netlify
+
+El proyecto está listo para deploy en Netlify:
+
+1. Conecta tu repositorio en [Netlify](https://app.netlify.com)
+2. Netlify detectará automáticamente Next.js
+3. Build command: `npm run build` (por defecto)
+4. Deploy
+
+Netlify soporta Next.js 16 con App Router sin configuración adicional.
+
 ## Tecnologías
 
 - **Next.js 16** - Framework React con Turbopack
