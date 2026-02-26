@@ -88,6 +88,9 @@ export function PortfolioSection() {
               {"currently in use"}
             </span>
           </h2>
+          <p className="mt-3 text-sm text-muted-foreground">
+            {"Freelance frontend projects — responsive designs and modern web experiences."}
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">

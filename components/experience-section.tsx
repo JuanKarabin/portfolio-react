@@ -66,6 +66,15 @@ const experiences = [
       "Support and maintenance provided for the Tax Administration system of the province of Neuquen, ensuring stability and performance.",
     tags: ["PHP", "SQL", "Government", "Support"],
   },
+  {
+    period: "2022 - Present",
+    role: "Web Developer",
+    company: "KALLI Digital",
+    logo: "/images/kalli-digital-logo.png",
+    description:
+      "Design responsive and dynamic landing pages for companies. Create modern web experiences that drive engagement and conversion.",
+    tags: ["Web Design", "Landing Pages", "Responsive", "React", "HTML/CSS", "JavaScript"],
+  },
 ]
 
 export function ExperienceSection() {
