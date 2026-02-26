@@ -37,6 +37,14 @@ const projects = [
     url: "https://oliviapizzas.com.ar",
   },
   {
+    title: "Almacén de Empanadas",
+    category: "Food",
+    description: "Website for a restaurant in Bariloche, Río Negro, Argentina. Features menu, locations, company information and contact form.",
+    color: "from-[#22c55e] to-[#15803d]",
+    image: "/images/almacen.png",
+    url: "https://almacenempanadas.com.ar/",
+  },
+  {
     title: "El Positivo",
     category: "Automotive",
     description: "Auto parts and spare parts store specialized in suspension and steering. Modern website with product catalog and quote form.",
